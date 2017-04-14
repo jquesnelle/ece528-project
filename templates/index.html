@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center"><h1>rugmi, an image host and converter</h1></div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 dropzone center-block" id="dropzone">
+            <div id="preview-template" style="display: none;">
+                <div>
+                    <span class="preview"><img data-dz-thumbnail /></span>
+                </div>
+                <div>
+                    <p class="name" data-dz-name></p>
+                    <strong class="error text-danger" data-dz-errormessage></strong>
+                </div>
+                <div>
+                    <p class="size" data-dz-size></p>
+                </div>
+            </div>
+        </div>
+    <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div id="progress-holder" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="display: none;">
+              <div id="progress" class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="static/js/dropzone.js"></script>
+    <script>
+        Dropzone.autoDiscover = false;
+        var dropzone = new Dropzone("div#dropzone", {
+            url: "/upload",
+            acceptedFiles: "image/*",
+            previewTemplate: document.getElementById('preview-template').innerHTML,
+            thumbnailHeight: 200,
+            dictDefaultMessage: "Drop files here or click to upload",
+            init: function() {
+                this.on("success", function(file, response) {
+                    window.location.href = '/' + response['key'];
+                });
+                this.on("sending", function(file) {
+                    document.getElementById('progress-holder').style.display = "";
+                });
+                this.on("totaluploadprogress", function(progress) {
+                    document.getElementById('progress').style.width = progress + "%";
+                });
+            }
+        });
+    </script>
+{% endblock %}

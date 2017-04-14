@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12"><img class="img-responsive center-block bottom-20px" src="{{ url }}"/></div>
+    </div>
+    <div class="row bottom-20px">
+        <div class="col-md-7 center-block" style="float: none;">
+            <span class="label label-default"><span class="glyphicon glyphicon-cloud-download"></span>&nbsp;Download</span>
+            <div class="btn-group" role="group">
+                <a href="/{{ key }}/download"><button type="button" class="btn btn-default">Original</button></a>
+                <a href="/{{ key }}/download/jpeg"><button type="button" class="btn btn-default">JPEG</button></a>
+                <a href="/{{ key }}/download/png"><button type="button" class="btn btn-default">PNG</button></a>
+                <a href="/{{ key }}/download/gif"><button type="button" class="btn btn-default">GIF</button></a>
+                <a href="/{{ key }}/download/bmp"><button type="button" class="btn btn-default">BMP</button></a>
+                <a href="/{{ key }}/download/tiff"><button type="button" class="btn btn-default">TIFF</button></a>
+            </div>
+            <div class="pull-right"><span class="label label-default">Views: {{ views }}</span></div>
+        </div>
+
+    </div>
+{% endblock %}

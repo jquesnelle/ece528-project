@@ -1,0 +1,10 @@
+bin/
+include/
+lib/
+Django*
+django
+.Python
+.idea
+*.pyc
+Google*
+cloudstorage/

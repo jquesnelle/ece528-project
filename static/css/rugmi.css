@@ -1,0 +1,29 @@
+.text-center {
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.dropzone {
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    outline: dimgray dashed;
+    display: block;
+    cursor: pointer;
+}
+
+.dz-message {
+    padding-top: 100px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 150%;
+    color: gray;
+    cursor: pointer;
+}
+
+.bottom-20px  {
+    margin-bottom: 20px;
+}

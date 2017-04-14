@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="jumbotron">
+        <h1>rugmi</h1>
+        <p>
+            rugmi is a simple image host and converter written by <a href="https://jeffq.com">Jeffrey Quesnelle</a>
+            as a final project for ECE 528 (Cloud Computing) at <a href="https://umdearborn.edu">University of Michigan-Dearborn</a>.
+        </p>
+        <p>
+            rugmi's front end uses the <a href="https://getbootstrap.com">Bootstrap</a> framework and
+            <a href="http://www.dropzonejs.com">Dropzone.js</a> for file uploading. The back end is written in
+            <a href="https://python.org">Python</a> using the <a href="http://flask.pocoo.org/">Flask</a> microframework.
+            The app is hosted on <a href="https://cloud.google.com/appengine/">Google App Engine</a>. Metadata on uploads
+            is stored in <a href="https://cloud.google.com/datastore/">Google Cloud Datastore</a> (a NoSQL database) and files themselves
+            are served using <a href="https://cloud.google.com/storage/">Google Cloud Storage</a>.
+        </p>
+    </div>
+{% endblock %}
